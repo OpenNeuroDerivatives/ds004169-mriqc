@@ -1,0 +1,194 @@
+[ReproMan] pre-command...
+[ReproMan] executing command code/containers/scripts/singularity_cmd run code/containers/images/bids/bids-mriqc--22.0.6.sing sourcedata/raw /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc participant --participant-label '0158' -w '/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158' -vv --nprocs 11 --ants-nthreads 8 --verbose-reports --dsname ds004169 --ica --mem_gb 30
+[ReproMan] ... within /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc
+230306-03:31:52,268 cli IMPORTANT:
+	 
+    Running MRIQC version 22.0.6:
+      * BIDS dataset path: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sourcedata/raw.
+      * Output folder: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc.
+      * Analysis levels: ['participant'].
+
+230306-03:31:52,353 nipype.workflow INFO:
+	 Building functional MRIQC workflow for files: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sourcedata/raw/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.nii.gz.
+230306-03:31:59,766 nipype.workflow INFO:
+	 Building anatomical MRIQC workflow (</scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sourcedata/raw/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.nii.gz>)..
+230306-03:32:59,303 cli WARNING:
+	 IMPORTANT: Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+230306-03:32:59,461 nipype.workflow INFO:
+	 Workflow mriqc_wf settings: ['check', 'execution', 'logging', 'monitoring']
+230306-03:32:59,721 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.datalad_get" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/datalad_get".
+230306-03:32:59,733 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/metadata".
+230306-03:32:59,742 nipype.workflow INFO:
+	 [Node] Executing "datalad_get" <mriqc.interfaces.datalad.DataladIdentityInterface>
+230306-03:32:59,757 nipype.interface INFO:
+	 Datalad interface without dataset path defined.
+230306-03:32:59,757 nipype.workflow INFO:
+	 [Node] Finished "datalad_get", elapsed time 0.000426s.
+230306-03:32:59,768 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+230306-03:34:49,536 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 109.756075s.
+230306-03:34:49,865 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/metadata".
+230306-03:34:49,874 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+230306-03:35:06,181 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.datasink" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/datasink".
+230306-03:35:06,193 nipype.workflow INFO:
+	 [Node] Executing "datasink" <mriqc.interfaces.bids.IQMFileSink>
+230306-03:35:06,206 nipype.workflow INFO:
+	 [Node] Finished "datasink", elapsed time 0.012281s.
+230306-03:35:07,973 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.funcMRIQC.UploadMetrics".
+230306-03:35:07,973 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = cfa6c3066312e4ecb0468a7e5de673fa/dd026b0e80515df496a8c2f1adb7d48c
+230306-03:35:07,994 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'a9ffb9aebc671f9d565af531ff0b8939') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'ac4a9b48d639410edb0f4facc9f4e587')
+230306-03:35:08,15 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.UploadMetrics" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/UploadMetrics".
+230306-03:35:08,17 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.funcMRIQC.UploadMetrics".
+230306-03:35:08,17 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = cfa6c3066312e4ecb0468a7e5de673fa/dd026b0e80515df496a8c2f1adb7d48c
+230306-03:35:08,19 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'a9ffb9aebc671f9d565af531ff0b8939') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'ac4a9b48d639410edb0f4facc9f4e587')
+230306-03:35:08,31 nipype.workflow INFO:
+	 [Node] Executing "UploadMetrics" <mriqc.interfaces.webapi.UploadIQMs>
+230306-03:35:08,34 nipype.interface INFO:
+	 MRIQC Web API: submitting to <https://mriqc.nimh.nih.gov:443/api/v1/bold>
+230306-03:35:08,297 nipype.interface INFO:
+	 QC metrics successfully uploaded.
+230306-03:35:08,298 nipype.workflow INFO:
+	 [Node] Finished "UploadMetrics", elapsed time 0.266303s.
+230306-03:35:13,915 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.funcMRIQC.ReportsWorkflow.GenerateReport".
+230306-03:35:13,915 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = 0afe4e86119dd79968ba7a611e8dd24c/6d09ec7c355e4014966df681a493661c
+230306-03:35:13,922 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'a9ffb9aebc671f9d565af531ff0b8939') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'ac4a9b48d639410edb0f4facc9f4e587')
+230306-03:35:13,924 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.GenerateReport" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/GenerateReport".
+230306-03:35:13,925 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.funcMRIQC.ReportsWorkflow.GenerateReport".
+230306-03:35:13,925 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = 0afe4e86119dd79968ba7a611e8dd24c/6d09ec7c355e4014966df681a493661c
+230306-03:35:13,925 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'a9ffb9aebc671f9d565af531ff0b8939') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/func/sub-0158_ses-01_task-nback_bold.json', 'ac4a9b48d639410edb0f4facc9f4e587')
+230306-03:35:13,991 nipype.workflow INFO:
+	 [Node] Executing "GenerateReport" <mriqc.interfaces.reports.IndividualReport>
+230306-03:35:13,994 cli WARNING:
+	 Building bold report: no exclude index was found
+230306-03:35:14,313 cli INFO:
+	 Generated individual log: /scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/GenerateReport/sub-0158_ses-01_task-nback_bold.html
+230306-03:35:14,314 nipype.workflow INFO:
+	 [Node] Finished "GenerateReport", elapsed time 0.322028s.
+230306-03:35:15,929 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.funcMRIQC.ReportsWorkflow.dsplots".
+230306-03:35:15,929 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = 61f2b8906e5a0a2aa1d559f30efebf19/6604d84e713b2c36e8e05e1f23b726cc
+230306-03:35:15,945 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * _outputs: (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/GenerateReport/sub-0158_ses-01_task-nback_bold.html', '9d0eba3960e66fcb147288434a75cc49')),) != (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/GenerateReport/sub-0158_ses-01_task-nback_bold.html', '07b5982d6b1ca5afbcb008fa5a905069')),)
+230306-03:35:15,945 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.dsplots" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/dsplots".
+230306-03:35:15,945 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.funcMRIQC.ReportsWorkflow.dsplots".
+230306-03:35:15,946 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = 61f2b8906e5a0a2aa1d559f30efebf19/6604d84e713b2c36e8e05e1f23b726cc
+230306-03:35:15,946 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * _outputs: (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/GenerateReport/sub-0158_ses-01_task-nback_bold.html', '9d0eba3960e66fcb147288434a75cc49')),) != (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..func..sub-0158_ses-01_task-nback_bold.nii.gz/GenerateReport/sub-0158_ses-01_task-nback_bold.html', '07b5982d6b1ca5afbcb008fa5a905069')),)
+230306-03:35:15,985 nipype.workflow INFO:
+	 [Node] Executing "dsplots" <nipype.interfaces.io.DataSink>
+230306-03:35:16,92 nipype.workflow INFO:
+	 [Node] Finished "dsplots", elapsed time 0.106495s.
+230306-03:36:31,865 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 101.989737s.
+230306-03:36:32,181 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.ComputeIQMs.datasink" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/datasink".
+230306-03:36:32,207 nipype.workflow INFO:
+	 [Node] Executing "datasink" <mriqc.interfaces.bids.IQMFileSink>
+230306-03:36:32,225 nipype.workflow INFO:
+	 [Node] Finished "datasink", elapsed time 0.01689s.
+230306-03:36:34,128 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.anatMRIQC.UploadMetrics".
+230306-03:36:34,128 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = c07c24bcc19a7f9d98973237b07444d0/729511e4ab0761c676083e4c1860e5db
+230306-03:36:34,133 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '882d71da0afe8d48b4a9f29872922c78') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '2527a32f7bc9e2f77a59b4e1d0e51206')
+230306-03:36:34,134 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.UploadMetrics" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/UploadMetrics".
+230306-03:36:34,134 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.anatMRIQC.UploadMetrics".
+230306-03:36:34,135 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = c07c24bcc19a7f9d98973237b07444d0/729511e4ab0761c676083e4c1860e5db
+230306-03:36:34,135 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '882d71da0afe8d48b4a9f29872922c78') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '2527a32f7bc9e2f77a59b4e1d0e51206')
+230306-03:36:34,142 nipype.workflow INFO:
+	 [Node] Executing "UploadMetrics" <mriqc.interfaces.webapi.UploadIQMs>
+230306-03:36:34,143 nipype.interface INFO:
+	 MRIQC Web API: submitting to <https://mriqc.nimh.nih.gov:443/api/v1/T1w>
+230306-03:36:34,153 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.anatMRIQC.ReportsWorkflow.GenerateReport".
+230306-03:36:34,153 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = 1717e8c9417053984fbe559a668ee634/ccdaec6e2ba749c3640c7d32dd0026fc
+230306-03:36:34,169 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '882d71da0afe8d48b4a9f29872922c78') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '2527a32f7bc9e2f77a59b4e1d0e51206')
+230306-03:36:34,171 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.ReportsWorkflow.GenerateReport" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/GenerateReport".
+230306-03:36:34,171 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.anatMRIQC.ReportsWorkflow.GenerateReport".
+230306-03:36:34,172 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = 1717e8c9417053984fbe559a668ee634/ccdaec6e2ba749c3640c7d32dd0026fc
+230306-03:36:34,172 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * in_iqms: ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '882d71da0afe8d48b4a9f29872922c78') != ('/scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds004169-mriqc/sub-0158/ses-01/anat/sub-0158_ses-01_T1w.json', '2527a32f7bc9e2f77a59b4e1d0e51206')
+230306-03:36:34,197 nipype.workflow INFO:
+	 [Node] Executing "GenerateReport" <mriqc.interfaces.reports.IndividualReport>
+230306-03:36:34,400 nipype.interface WARNING:
+	 QC metrics upload failed to create an ID for the record uplOADED. rEsponse from server follows: {"_status": "ERR", "_issues": {"bids_meta": {"PartialFourier": "must be of boolean type"}}, "_error": {"code": 422, "message": "Insertion failure: 1 document(s) contain(s) error(s)"}}
+230306-03:36:34,400 nipype.interface WARNING:
+	 QC metrics failed to upload. Status 422: {"_status": "ERR", "_issues": {"bids_meta": {"PartialFourier": "must be of boolean type"}}, "_error": {"code": 422, "message": "Insertion failure: 1 document(s) contain(s) error(s)"}}
+230306-03:36:34,400 nipype.workflow INFO:
+	 [Node] Finished "UploadMetrics", elapsed time 0.257369s.
+230306-03:36:34,528 cli INFO:
+	 Generated individual log: /scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/GenerateReport/sub-0158_ses-01_T1w.html
+230306-03:36:34,529 nipype.workflow INFO:
+	 [Node] Finished "GenerateReport", elapsed time 0.330601s.
+230306-03:36:36,132 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.anatMRIQC.ReportsWorkflow.dsplots".
+230306-03:36:36,133 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = d02b6a869d76b11b232c10cb28695eb3/32d5cf6024edca13ee66079d3339bc7c
+230306-03:36:36,144 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * _outputs: (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/GenerateReport/sub-0158_ses-01_T1w.html', '8d87f12416e38e91a2e3d894d2528884')),) != (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/GenerateReport/sub-0158_ses-01_T1w.html', '25a3f2326787e425e45e0613a59b7c13')),)
+230306-03:36:36,144 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.anatMRIQC.ReportsWorkflow.dsplots" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/dsplots".
+230306-03:36:36,145 nipype.workflow INFO:
+	 [Node] Outdated cache found for "mriqc_wf.anatMRIQC.ReportsWorkflow.dsplots".
+230306-03:36:36,145 nipype.workflow VERBOSE:
+	 [Node] Old/new hashes = d02b6a869d76b11b232c10cb28695eb3/32d5cf6024edca13ee66079d3339bc7c
+230306-03:36:36,145 nipype.workflow VERBOSE:
+	           Some dictionary entries had differing values:
+            * _outputs: (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/GenerateReport/sub-0158_ses-01_T1w.html', '8d87f12416e38e91a2e3d894d2528884')),) != (('@html_report', ('/scratch1/03201/jbwexler/work_dir/mriqc/ds004169_sub-0158/mriqc_wf/anatMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds004169-mriqc..sourcedata..raw..sub-0158..ses-01..anat..sub-0158_ses-01_T1w.nii.gz/GenerateReport/sub-0158_ses-01_T1w.html', '25a3f2326787e425e45e0613a59b7c13')),)
+230306-03:36:36,153 nipype.workflow INFO:
+	 [Node] Executing "dsplots" <nipype.interfaces.io.DataSink>
+230306-03:36:36,446 nipype.workflow INFO:
+	 [Node] Finished "dsplots", elapsed time 0.292274s.
+230306-03:36:38,73 cli WARNING:
+	 IMPORTANT: Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+230306-03:36:38,73 cli IMPORTANT:
+	 Participant level finished successfully.
+230306-03:36:38,73 cli INFO:
+	 Generating BIDS derivatives metadata.
+230306-03:36:38,76 cli INFO:
+	 MRIQC completed.
